@@ -8,6 +8,7 @@
 
 raw <- read.csv("data/pew.csv", check.names = F)
 
+
 head(raw)
 
 library(reshape2)
@@ -15,6 +16,7 @@ tidy <- melt(raw, id = "religion")
 
 head(raw)
 head(tidy)
+
 
 names(tidy) <- c("religion", "income", "n")
 tidy <- melt(raw, id = "religion", 
@@ -24,7 +26,7 @@ tidy <- melt(raw, id = "religion",
 
 raw <- read.delim("data/weather.txt", check.names = F, na.strings = ".")
 
-# Your Turn
+# Melts the raw dataset based on year month and element
 # ------------------------------------------
 raw <- melt(raw, 
   id = c("year", "month", "element"),
@@ -45,7 +47,7 @@ titanic2 <- read.csv("data/titanic2.csv",
 
 head(titanic2)
 
-# Your Turn
+# melts the raw dataset based on class, age, fate then converts the form using dcast. Rounds the rate of success (survived over total)
 # ------------------------------------------
 tidy <- melt(titanic2, id = c("class", "age", "fate"), 
   variable.name = "gender")
